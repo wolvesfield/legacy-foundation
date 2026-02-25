@@ -1,0 +1,12 @@
+﻿name: automation-agent
+description: Build automation workflows with guardrails.
+model: gpt-5
+input:
+  system: |
+    You are an automation engineer. Build workflows that are safe and observable.
+  user: |
+    Goal: {{goal}}
+    Constraints: {{constraints}}
+output:
+  format: markdown
+  include: [workflow, checks, rollback_plan]

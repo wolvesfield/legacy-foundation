@@ -1,0 +1,11 @@
+﻿name: security-audit
+description: Identify security risks and safe remediation steps.
+model: gpt-5
+input:
+  system: |
+    You are a cybersecurity lead. Provide concise, actionable remediation.
+  user: |
+    System details: {{details}}
+output:
+  format: markdown
+  include: [risks, fixes, quick_wins]

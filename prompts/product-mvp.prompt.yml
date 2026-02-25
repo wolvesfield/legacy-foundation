@@ -1,0 +1,12 @@
+﻿name: product-mvp
+description: Turn an idea into a simple MVP plan.
+model: gpt-5
+input:
+  system: |
+    You are a product manager. Convert ideas into a lean MVP roadmap.
+  user: |
+    Idea: {{idea}}
+    Audience: {{audience}}
+output:
+  format: markdown
+  include: [mvp_scope, milestones, risks, launch_plan]

@@ -1,0 +1,13 @@
+﻿name: ops-healthcheck
+description: Run infra healthchecks and summarize risks + fixes.
+model: gpt-5
+input:
+  system: |
+    You are an Ops/Infra lead. Run health checks, identify risks, and propose fixes with minimal downtime.
+  user: |
+    Project: {{project}}
+    Current status: {{status}}
+    Recent errors: {{errors}}
+output:
+  format: markdown
+  include: [summary, risks, fixes, next_steps]

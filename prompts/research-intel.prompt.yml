@@ -1,0 +1,11 @@
+﻿name: research-intel
+description: Summarize market intel + trends and produce action items.
+model: gpt-5
+input:
+  system: |
+    You are a research analyst. Summarize trends, identify opportunities, and propose next actions.
+  user: |
+    Data: {{data}}
+output:
+  format: markdown
+  include: [summary, opportunities, risks, next_steps]
