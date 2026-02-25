@@ -60,6 +60,7 @@ Legacy Foundation uses a layered agent architecture to automate operations acros
 - **Task Agents** — Execute specific, bounded tasks (e.g., run a health check, generate a report)
 - **Coordinator Agents** — Orchestrate multi-step workflows and delegate to task agents
 - **Monitor Agents** — Continuously observe systems and trigger alerts or remediation
+- **Orchestrator (Cipher)** — Central coordinator across all teams
 
 ### 2. Memory System
 Agents share a structured memory system:
