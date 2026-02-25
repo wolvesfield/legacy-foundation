@@ -1,0 +1,22 @@
+﻿name: Trend Scan Report
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Trend scan placeholder
+        run: |
+          mkdir -p reports
+          echo "Trend scan placeholder: $(date -u)" >> reports/trend-scan.log
+      - name: Commit report
+        run: |
+          git config user.name "legacy-bot"
+          git config user.email "legacy-bot@users.noreply.github.com"
+          git add reports/trend-scan.log
+          git commit -m "chore: trend scan" || echo "No changes"
+          git push

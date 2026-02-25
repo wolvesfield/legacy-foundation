@@ -1,0 +1,22 @@
+﻿name: Agent Job Runner
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Agent placeholder
+        run: |
+          mkdir -p reports
+          echo "Agent job runner tick: $(date -u)" >> reports/agent-runner.log
+      - name: Commit log
+        run: |
+          git config user.name "legacy-bot"
+          git config user.email "legacy-bot@users.noreply.github.com"
+          git add reports/agent-runner.log
+          git commit -m "chore: agent runner tick" || echo "No changes"
+          git push
